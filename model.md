@@ -97,3 +97,16 @@ good
       </div>
     <% end  %>
 
+## Push All find() Calls into Finders on the Model
+
+not good
+
+    def self.ordered
+      order("id desc")
+    end
+
+good
+
+    scope :ordered, -> { order("id desc") }
+
+

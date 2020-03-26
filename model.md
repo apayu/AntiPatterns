@@ -1,5 +1,6 @@
 
 model:
+
     class Address < ApplicationRecord
       belongs_to :customer
     end
@@ -64,6 +65,7 @@ model:
     end
 
 view:
+
     <% @invoices.each do |i| %>
       <div>
         <%= i.id %>

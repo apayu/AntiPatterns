@@ -1,5 +1,8 @@
+# Voyeuristic Models
 
-model:
+## follow the Law of Demeter(LoD)
+
+### model
 
     class Address < ApplicationRecord
       belongs_to :customer
@@ -64,7 +67,24 @@ model:
       # end
     end
 
-view:
+### view
+
+bad
+
+    <% @invoices.each do |i| %>
+      <div>
+        <%= i.id %>
+        <%= i.customer.name %>
+        <%= i.customer.address.street %>
+        <%= i.customer.address.city %>
+        <%= i.customer.address.state %>
+        <%= i.customer.zip_code %>
+      </div>
+    <% end  %>
+
+use only one dot
+
+good
 
     <% @invoices.each do |i| %>
       <div>
